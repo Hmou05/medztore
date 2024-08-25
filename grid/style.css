@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Segoe UI;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+    background-color: rgb(51, 153, 181);
+}
+header {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 0;
+}
+nav, ul, li {
+    display: flex;
+    flex-direction: row;
+}
+nav {
+    height: 100%;
+    width: 100%;
+    background: #191a21;
+    font-family: Segoe UI;
+    font-weight: 500;
+    letter-spacing: 1px;
+    align-items: center;
+    justify-content: flex-start;
+}
+#logo {
+    height: 100%;
+}
+ul {
+    width: 60%;
+    justify-content: space-evenly;
+}
+li {
+    list-style: none;
+}
+
+.navLink, #name {
+    text-decoration: none;
+    color: aliceblue;
+    cursor: default;
+}
+.navLink:hover {
+    color: #f06c00;
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: fit-content;
+        height: fit-content;
+        display: grid;
+        grid-template-rows: repeat(6, 40px);
+        grid-template-columns: repeat(10, 40px);
+        gap: 5px;
+        background-color: rgb(51, 153, 181);
+        padding: 5px;
+    }
+    
+    .undo, .search, .share, .bookmark {
+        background-color: rgba(255, 255, 255, .5);
+        background-size: cover;
+        &:hover {
+            background-color: rgb(255, 255, 255);
+        }
+    }
+    
+    .undo {
+        grid-area: 1/1/2/2;
+        background-image: url("./Images/left.png");
+    }
+    
+    .entry {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        grid-area: 1/2/2/8;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: 700;
+        font-size: .8rem;
+        border-radius: 10px;
+        padding-left: 10px;
+        border-style: none;
+        outline: none;
+        &::placeholder {
+            color: #cbcbcb;
+        }
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+    
+    .search {
+        grid-area: 1/8/2/9;
+        background-image: url("./Images/search.png");
+    }
+    
+    .share {
+        grid-area: 1/9/2/10;
+        background-image: url("./Images/share.png");
+    }
+    
+    .bookmark {
+        grid-area: 1/10/2/11;
+        background-image: url("./Images/bookmark.png");
+    }
+    
+    .icon, .stars, .company, .size, .containAds {
+        cursor: default;
+        user-select: none;
+    }
+    
+    .icon {
+        grid-area: 2/1/6/5;
+        background-image: url("https://image.winudf.com/v2/image1/Y29tLmZhY2Vib29rLmthdGFuYV9pY29uXzE2OTU4MjkxNjdfMDYw/icon.webp?w=280&fakeurl=1&type=.webp");
+        background-size: cover;
+        transform: scale(0.8);
+    }
+    
+    .stars {
+        grid-area: 6/1/11/5;
+        color: rgb(255, 208, 0);
+        font-weight: 700;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .title {
+        grid-area: 2/5/3/11;
+        padding: 10px;
+        font-size: 26px;
+        font-weight: 700;
+        color: #fff;
+    }
+    
+    .company {
+        grid-area: 3/6/4/10;
+        padding: 5px;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .size {
+        grid-area: 4/7/5/9;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .containAds {
+        grid-area: 5/5/6/11;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .download {
+        background-color: #00cc8b;
+        grid-area: 6/5/11/11;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+    
+    div:not(:has(div)) {
+        border-radius: 10px;
+    }
+}
